@@ -7,11 +7,12 @@ Hair Removal Customer Management
 <br></br>
 
 # URL
-
+[オリジナルアプリ：Hair Removal Customer Management](https://hair-removal-app.herokuapp.com/)
 <br></br>
 
 # テスト用アカウント
-
+・Basic認証パスワード: hair1109<br></br>
+・Basic認証ID: 1109
 <br></br>
 
 # 利用方法
