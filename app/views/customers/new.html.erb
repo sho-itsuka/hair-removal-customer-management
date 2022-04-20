@@ -1,4 +1,101 @@
 <h1>顧客新規登録画面</h1>
-<div class=resistration>
-<%= link_to '登録', customers_path, class: "new_resistration" %>
-</div>
+
+</header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">お客様の情報を入力</h2>
+    <%= form_with model: @customer, url:customers_path, local: true do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+    
+    <%# 顧客の名前 %>
+    <div class="new-last-name">
+      <div class="weight-bold-text">
+        名字(全角)
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :last_name, class:"customer-text", id:"customer-last-name", placeholder:"名字" %>
+      <div class="new-first-name">
+        <div class="weight-bold-text">
+          名前(全角)
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :first_name, class:"customer-text", id:"customer-first-name", placeholder:"名前" %>
+      </div>
+    </div>
+    <div class="new-last-name-kana">
+      <div class="weight-bold-text">
+        名字(カタカナ)
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :last_name_kana, class:"customer-text", id:"customer-last-name-kana", placeholder:"名字(カタカナ)" %>
+      <div class="new-first-name-kana">
+        <div class="weight-bold-text">
+          名前(カタカナ)
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :first_name_kana, class:"customer-text", id:"customer-first-name-kana", placeholder:"名前(カタカナ)" %>
+      </div>
+    </div>
+    <%# /顧客の名前 %>
+
+    <%# 顧客の詳細 %>
+    <div class="customer-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          性別
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"customer-gender"}) %>
+        <div class="weight-bold-text">
+          電話番号
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :phone_number, class:"customer-text", id:"customer-phone-number", placeholder:"電話番号(ハイフンなし)" %>
+        <div class="weight-bold-text">
+          e-mail
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :email, class:"customer-text", id:"customer-email", placeholder:"メールアドレス" %>
+        <div class="weight-bold-text">
+          誕生日
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :birthday, class:"customer-text", id:"customer-birthday", placeholder:"誕生日" %>
+        <div class="weight-bold-text">
+          郵便番号
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :postal_code, class:"customer-text", id:"customer-postal-code", placeholder:"郵便番号(ハイフンあり)" %>
+        <div class="weight-bold-text">
+          都道府県
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"customer-prefecture"}) %>
+        <div class="weight-bold-text">
+          市区町村
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :city, class:"customer-text", id:"customer-city", placeholder:"市区町村" %>
+        <div class="weight-bold-text">
+          番地
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :address, class:"customer-text", id:"customer-address", placeholder:"番地" %>
+        <div class="weight-bold-text">
+          建物
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :building, class:"customer-text", id:"customer-building", placeholder:"建物" %>
+      </div>
+    </div>
+    <%# /顧客の詳細 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"resistration-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</header>
