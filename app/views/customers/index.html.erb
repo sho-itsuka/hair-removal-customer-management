@@ -12,3 +12,6 @@
     <li> <%= link_to '顧客検索', '#', class:"search_customer" %> </li>
   </ul>
 </div>
+<div class="card__wrapper">
+   <%= render partial: "customer", collection: @customers %>
+</div>
