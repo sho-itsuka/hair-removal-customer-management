@@ -16,8 +16,12 @@ class CustomersController < ApplicationController
     end
   end
 
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
   private
   def customer_params
-    params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :gender_id, :phone_number, :email, :birthday, :postal_code, :prefecture_id, :city, :address, :building)
+    params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :gender_id, :phone_number, :email, :birthday, :postal_code, :prefecture_id, :city, :address, :building).merge(user_id: current_user.id)
   end
 end

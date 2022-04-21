@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user, optional: true
+  belongs_to :user
   belongs_to :gender
   belongs_to :prefecture
   

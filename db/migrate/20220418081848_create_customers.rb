@@ -15,6 +15,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.string :address,          null: false
       t.string :building,         null: false
       t.timestamps
+      t.references :user,         null: false, foreign_key: true
     end
   end
 end

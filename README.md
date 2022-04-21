@@ -84,21 +84,22 @@ Hair Removal Customer Management
 
 ## customers テーブル(顧客)
 
-| Column          | Type    | Options                   |
-| --------------- | ------- | ------------------------- |
-| last_name       | string  | null: false               |
-| first_name      | string  | null: false               |
-| last_name_kana  | string  | null: false               |
-| first_name_kana | string  | null: false               |
-| gender_id       | integer | null: false               |
-| phone_number    | string  | null: false               |
-| email           | string  | null: false, unique: true |
-| birthday        | date    |                           |
-| postal_code     | string  |                           |
-| prefecture_id   | integer |                           |
-| city            | string  |                           |
-| address         | string  |                           |
-| building        | string  |                           |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| last_name       | string     | null: false                    |
+| first_name      | string     | null: false                    |
+| last_name_kana  | string     | null: false                    |
+| first_name_kana | string     | null: false                    |
+| gender_id       | integer    | null: false                    |
+| phone_number    | string     | null: false                    |
+| email           | string     | null: false, unique: true      |
+| birthday        | date       |                                |
+| postal_code     | string     |                                |
+| prefecture_id   | integer    |                                |
+| city            | string     |                                |
+| address         | string     |                                |
+| building        | string     |                                |
+| user            | references | null: false, foreign_key: true |
 
 - belongs_to :user
 - has_many :hair_removals

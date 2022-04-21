@@ -1,5 +1,5 @@
 <div class="card">
   <div class="card__body">
-    <%= link_to "#{customer.last_name}#{customer.first_name}", "#", method: :get, class: :card__title %>
+    <%= link_to "#{customer.last_name}#{customer.first_name}", customer_path(customer.id), class: :card__title %>
   </div>
 </div>
