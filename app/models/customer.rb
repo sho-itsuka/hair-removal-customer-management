@@ -3,6 +3,7 @@ class Customer < ApplicationRecord
   belongs_to :user
   belongs_to :gender
   belongs_to :prefecture
+  has_one :hair_removal
   
   validates :gender_id, :prefecture_id, numericality: { other_than: 1 } 
   
