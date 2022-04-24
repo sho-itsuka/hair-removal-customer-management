@@ -2,9 +2,10 @@
   <%= "#{@customer.last_name} #{@customer.first_name}様の施術情報一覧" %>
 </h1>
 
-<ul class="index-removal">
-  <li><%= link_to "新規登録", new_customer_hair_removal_path, class:"new-hair-removal" %></li>
-  <li><%= link_to "施術一覧", "#", class:"index-hair-removal" %></li>
+<ul style= "list-style: none;", class="index-removal">
+  <li><%= link_to "■ 新規登録", new_customer_hair_removal_path, class:"new-hair-removal" %></li>
+  <li>■ 施術一覧 </li>
+  <%= render partial: "hair_removal", collection: @hair_removals %>
   <li><%= link_to "もどる", customer_path(@customer.id), class:"index-hair-removal" %></li>
 </ul>
 

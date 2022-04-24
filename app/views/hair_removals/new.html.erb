@@ -8,6 +8,29 @@
     <%#= render 'shared/error_messages', model: f.object %>
 
     <div class="new-last-name">
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          【施術写真1】
+          <span class="indispensable">1枚目</span>
+        </div>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"treatment-image" %>
+        </div>
+        <div class="weight-bold-text">
+          【施術写真2】
+          <span class="indispensable">2枚目</span>
+        </div>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"treatment-image" %>
+        </div>
+        <div class="weight-bold-text">
+          【施術写真3】
+          <span class="indispensable">3枚目</span>
+        </div>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"treatment-image" %>
+        </div>
+      </div>
       <div class="weight-bold-text">
           施術の種類
       </div>

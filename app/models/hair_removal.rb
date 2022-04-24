@@ -1,4 +1,5 @@
 class HairRemoval < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :customer
   belongs_to :treatment
   belongs_to :part
