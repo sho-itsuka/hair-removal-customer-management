@@ -9,6 +9,12 @@ class HairRemovalsController < ApplicationController
   end
 
   def create
+    @hair_removal = HairRemoval.new
+    if @hair_removal.save
+      redirect_to customer_hair_removals_path
+    else
+      render :new
+    end
   end
 
   private

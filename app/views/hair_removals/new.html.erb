@@ -1,1 +1,34 @@
-<h1>新規施術情報登録画面</h1>
+<h1>施術新規登録画面</h1>
+
+</header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">施術情報を入力</h2>
+    <%= form_with model: @hair_removal, url:customer_hair_removals_path, local: true do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <div class="new-last-name">
+      <div class="weight-bold-text">
+          施術の種類
+      </div>
+      <%= f.collection_select(:treatment_id, Treatment.all, :id, :name, {}, {class:"select-box", id:"treatment-pattern"}) %>
+      <div class="weight-bold-text">
+          施術箇所
+      </div>
+      <%= f.collection_select(:part_id, Part.all, :id, :name, {}, {class:"select-box", id:"treatment-part"}) %>
+      <div class="weight-bold-text">
+        施術した日
+      </div>
+      <%= f.text_area :treatment_date, class:"treatment-date", id:"treatment--date", placeholder:"(例)20220423" %>
+      <div class="weight-bold-text">
+        メモ
+      </div>
+      <%= f.text_area :treatment_memo, class:"treatment-memo", id:"treatment--memo", placeholder:"(任意)" %>
+    </div>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" , class:"resistration-btn" %>
+      <%=link_to 'もどる', customer_hair_removals_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</header>
