@@ -1,11 +1,11 @@
 <div class="inner">
   <div class="greeting">
     こんにちは、
-    <%= link_to "#{current_user.nickname}さん", "", class: :greeting__link %>
+    <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link %>
   </div>
 </div>
 <div>MENU
-  <ul class="menu">
+  <ul style= "list-style: none;", class="menu">
     <li> <%= link_to '顧客新規登録', new_customer_path, class:"new_customer" %> </li>
     <li> <%= link_to '顧客検索', '#', class:"search_customer" %> </li>
   </ul>

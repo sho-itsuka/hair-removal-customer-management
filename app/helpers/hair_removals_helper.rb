@@ -1,0 +1,2 @@
+module HairRemovalsHelper
+end
