@@ -18,7 +18,8 @@ class HairRemovalsController < ApplicationController
   end
 
   def show
-    
+  end
+
 
   private
   
