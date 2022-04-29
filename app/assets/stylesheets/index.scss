@@ -48,9 +48,19 @@ a {
 }
 
 .customer-list {
-  font-size: 25px;
+  font-size: 30px;
   color: white;
   padding-left: 40px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.copy-right {
+  color: white;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 .btn-new-customer {
@@ -116,4 +126,14 @@ a {
   background    : #000000;     /* 文字色     */
 }
 
+.removal-index {
+  background-image: image-url('black.jpg');
+  color: white;
+  padding-bottom: 30px;
+}
 
+.title-removal {
+  color: red;
+  padding-left: 20px;
+  padding-top: 20px;
+}

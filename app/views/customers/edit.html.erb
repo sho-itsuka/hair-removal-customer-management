@@ -1,5 +1,5 @@
-<div class="items-sell-main">
-    <h2 class="items-sell-title">お客様情報変更画面</h2>
+<div class="edit-main">
+    <h2 class="edit-title">お客様情報変更画面</h2>
     <%= form_with model: @customer, url: customer_path, local: true do |f| %>
 
     <%#= render 'shared/error_messages', model: f.object %>
@@ -90,5 +90,5 @@
       <%= button_to 'もどる', customer_path, method: :get, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
-  </div>
-  <% end %>
+</div>
+<% end %>

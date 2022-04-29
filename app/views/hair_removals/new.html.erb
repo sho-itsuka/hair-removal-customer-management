@@ -1,57 +1,59 @@
-<h1>施術新規登録画面</h1>
+<div class="new-removal">
+  <h1 class="shinki">施術新規登録画面</h1>
 
-</header>
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">施術情報を入力</h2>
-    <%= form_with model: @hair_removal, url:customer_hair_removals_path, local: true do |f| %>
+  </header>
+    <div class="new-removal-main">
+      <h2 class="new-removal-title">施術情報を入力</h2>
+      <%= form_with model: @hair_removal, url:customer_hair_removals_path, local: true do |f| %>
 
-    <%#= render 'shared/error_messages', model: f.object %>
+      <%#= render 'shared/error_messages', model: f.object %>
 
-    <div class="new-last-name">
-      <div class="img-upload">
+      <div class="new-last-name">
+        <div class="img-upload">
+          <div class="weight-bold-text">
+            【施術写真1】
+            <span class="indispensable">1枚目</span>
+          </div>
+          <div class="click-upload">
+            <%= f.file_field :image, id:"treatment-image" %>
+          </div>
+          <div class="weight-bold-text">
+            【施術写真2】
+            <span class="indispensable">2枚目</span>
+          </div>
+          <div class="click-upload">
+            <%= f.file_field :image, id:"treatment-image" %>
+          </div>
+          <div class="weight-bold-text">
+            【施術写真3】
+            <span class="indispensable">3枚目</span>
+          </div>
+          <div class="click-upload">
+            <%= f.file_field :image, id:"treatment-image" %>
+          </div>
+        </div>
         <div class="weight-bold-text">
-          【施術写真1】
-          <span class="indispensable">1枚目</span>
+            施術の種類
         </div>
-        <div class="click-upload">
-          <%= f.file_field :image, id:"treatment-image" %>
-        </div>
+        <%= f.collection_select(:treatment_id, Treatment.all, :id, :name, {}, {class:"select-box", id:"treatment-pattern"}) %>
         <div class="weight-bold-text">
-          【施術写真2】
-          <span class="indispensable">2枚目</span>
+            施術箇所
         </div>
-        <div class="click-upload">
-          <%= f.file_field :image, id:"treatment-image" %>
-        </div>
+        <%= f.collection_select(:part_id, Part.all, :id, :name, {}, {class:"select-box", id:"treatment-part"}) %>
         <div class="weight-bold-text">
-          【施術写真3】
-          <span class="indispensable">3枚目</span>
+          施術した日
         </div>
-        <div class="click-upload">
-          <%= f.file_field :image, id:"treatment-image" %>
+        <%= f.text_area :treatment_date, class:"treatment-date", id:"treatment--date", placeholder:"(例)20220423" %>
+        <div class="weight-bold-text">
+          メモ
         </div>
+        <%= f.text_area :treatment_memo, class:"treatment-memo", id:"treatment--memo", placeholder:"(任意)" %>
       </div>
-      <div class="weight-bold-text">
-          施術の種類
+      <div class="sell-btn-contents">
+        <%= f.submit "登録する" , class:"resistration-btn" %>
+        <%=link_to 'もどる', customer_hair_removals_path, class:"back-btn" %>
       </div>
-      <%= f.collection_select(:treatment_id, Treatment.all, :id, :name, {}, {class:"select-box", id:"treatment-pattern"}) %>
-      <div class="weight-bold-text">
-          施術箇所
-      </div>
-      <%= f.collection_select(:part_id, Part.all, :id, :name, {}, {class:"select-box", id:"treatment-part"}) %>
-      <div class="weight-bold-text">
-        施術した日
-      </div>
-      <%= f.text_area :treatment_date, class:"treatment-date", id:"treatment--date", placeholder:"(例)20220423" %>
-      <div class="weight-bold-text">
-        メモ
-      </div>
-      <%= f.text_area :treatment_memo, class:"treatment-memo", id:"treatment--memo", placeholder:"(任意)" %>
     </div>
-    <div class="sell-btn-contents">
-      <%= f.submit "登録する" , class:"resistration-btn" %>
-      <%=link_to 'もどる', customer_hair_removals_path, class:"back-btn" %>
-    </div>
-  </div>
-  <% end %>
-</header>
+    <% end %>
+  </header>
+</div>
