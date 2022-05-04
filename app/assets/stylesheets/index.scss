@@ -10,10 +10,12 @@
 
 .inner {
   background-image: image-url('header.jpg');
-  height: 450px;
+  background-size: cover;
+  height: 550px;
 }
 
 .greeting{
+  letter-spacing: 5px;
   color: white;
   padding-left: 20px;
   font-size: 40px;
@@ -128,6 +130,7 @@ a {
 
 .removal-index {
   background-image: image-url('black.jpg');
+  background-size: cover;
   color: white;
   padding-bottom: 30px;
 }

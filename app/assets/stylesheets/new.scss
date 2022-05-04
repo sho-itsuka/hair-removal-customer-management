@@ -21,3 +21,28 @@
 .shinki {
   color: red;
 }
+
+.wrapper {
+  background-image: image-url('flower.jpg');
+  color: white;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.resistration-btn {
+  transition: all 1s;
+  box-shadow: 0 5px gray;
+  cursor: pointer;
+}
+
+.resistration-btn:active {
+  background-color: gray;
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.wrapper h1 {
+  color: red;
+}
